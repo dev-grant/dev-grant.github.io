@@ -11,7 +11,7 @@ const AMOUNT_DIVIDER = 2800
 const DIST_MAX = 100
 const CONNECT_RADIUS = 100
 // speed of rotating
-const ROTATION = 0.0001
+const ROTATION = 0.0005
 
 let canvas = document.getElementById('stars')
 canvas.width = canvas.offsetWidth
@@ -154,7 +154,7 @@ function animateDots() {
 document.body.addEventListener('mousemove', function(e) {
 
   connectArea.destX = e.clientX
-  connectArea.destY = e.clientY 
+  connectArea.destY = e.clientY
 
 })
 
