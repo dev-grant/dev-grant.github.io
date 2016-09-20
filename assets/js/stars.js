@@ -104,6 +104,7 @@ animateDots()
 */
 
 function updateConnectArea() {
+
   let distX = connectArea.destX - connectArea.x
   if (distX > 5 || distX < 5) connectArea.x += Math.floor(distX / 20)
   let distY = connectArea.destY - connectArea.y
@@ -116,6 +117,7 @@ function connectDots() {
 
       let xDiff = dot1.x - dot2.x,
         yDiff = dot1.y - dot2.y
+
       let xCoreDiff = dot1.x - connectArea.x,
         yCoreDiff = dot1.y - connectArea.y
 
@@ -150,12 +152,14 @@ function animateDots() {
 }
 
 document.body.addEventListener('mousemove', function(e) {
-  connectArea.destX = e.clientX || e.touches && e.touches[0].pageX
-  connectArea.destY = e.clientY || e.touches && e.touches[0].pageY
+
+  connectArea.destX = e.clientX
+  connectArea.destY = e.clientY 
 
 })
 
 document.body.addEventListener('mouseleave', function(e) {
+
   connectArea.destX = center.x
   connectArea.destY = center.y
 
